@@ -56,7 +56,7 @@
       var config = {
         arguments: [],
         dataUrl:"https://raw.githubusercontent.com/MilitantNoob/OP/main/Build/OpCarGame.data",
-        frameworkUrl:"https://raw.githubusercontent.com/MilitantNoob/OP/main/Build/OpCarGame.framework.js",
+        frameworkUrl:"/OpCarGame.framework.js",
         codeUrl:"https://raw.githubusercontent.com/MilitantNoob/OP/main/Build/OpCarGame.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "RuptureLabs",
@@ -75,17 +75,12 @@
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
 
-        var config = {
-  arguments: [],
-  dataUrl: "https://raw.githubusercontent.com/MilitantNoob/OP/main/Build/OpCarGame.data",
-  frameworkUrl: "https://github.com/MilitantNoob/OP/tree/main/Build/OpCarGame.framework.js",
-  codeUrl: "https://raw.githubusercontent.com/MilitantNoob/OP/main/Build/OpCarGame.wasm",
-  streamingAssetsUrl: "StreamingAssets",
-  companyName: "RuptureLabs",
-  productName: "StreetSpeed",
-  productVersion: "0.0.1",
-  showBanner: unityShowBanner,
-};
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+        document.querySelector("#unity-container").className = "unity-mobile";
+        canvas.className = "unity-mobile";
 
         // To lower canvas resolution on mobile devices to gain some
         // performance, uncomment the following line:
