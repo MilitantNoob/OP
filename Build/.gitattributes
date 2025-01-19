@@ -1,0 +1,2 @@
+*OPCarGame.data filter=lfs diff=lfs merge=lfs -text
+*OpCarGame.wasm filter=lfs diff=lfs merge=lfs -text
